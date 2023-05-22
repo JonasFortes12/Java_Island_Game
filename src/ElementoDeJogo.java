@@ -1,7 +1,6 @@
 
 public interface ElementoDeJogo {
-	int posicaoX = 1;
-	int posicaoY = 1;
+	Posicao posicao = new Posicao(1, 1);
 	
 	
 }

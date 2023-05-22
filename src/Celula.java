@@ -1,14 +1,13 @@
 
 public class Celula {
 
-	public int posicaoX;
-	public int posicaoY;
 	public int id;
+	public Posicao posicao;
 	public ElementoDeJogo elemento;//quem está ocupando 
 	
 	public Celula(int id, int x , int y) {
-		this.posicaoX = x;
-		this.posicaoY = y;
+		this.posicao.coordenadaX = x;
+		this.posicao.coordenadaY = y;
 		this.id = id;
 		elemento = null;
 	}
@@ -18,6 +17,6 @@ public class Celula {
 	}
 	
 	public String infos() {
-		return "Celula:  " + id + " x: " + posicaoX + " y: " + posicaoY;
+		return "Celula:  " + id + " x: " + posicao.coordenadaX + " y: " + posicao.coordenadaY;
 	}
 }

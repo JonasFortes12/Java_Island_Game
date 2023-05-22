@@ -23,32 +23,40 @@ public class ServicosJogo {
 	}
 	
 	
-	public ArrayList<int[]> sortearAlunosNoPlano() {	
-		ArrayList<int[]> posicoesIniciaisAlunos = new ArrayList<int[]>();
+	public void sortearAlunosNoPlano() {	
+		
 		
 		for(int i=1; i<=this.qtdAlunos; i++) {
-			int[] coordenada = new int[2];
-			coordenada[0] = sortearNumero(1, this.plano.tamanhoX);
-			coordenada[1] = sortearNumero(1, this.plano.tamanhoY);
+			int celulaSorteada = sortearNumero(1, this.plano.listaCelulas.size());
 			
-			for(int[] c : posicoesIniciaisAlunos) {
-				while(coordenada[0] == c[0] && coordenada[1] == c[1]) {
-					coordenada[0] = sortearNumero(1, this.plano.tamanhoX);
-					coordenada[1] = sortearNumero(1, this.plano.tamanhoY);
-				}
+			while(this.plano.listaCelulas.get(celulaSorteada).elemento != null) {
+				celulaSorteada++;
+				System.out.println("Celula Ocupada - Prox posicao para Aluno");
 			}
 			
-			posicoesIniciaisAlunos.add(coordenada);
-				
+			this.plano.listaCelulas.get(celulaSorteada).elemento = new Aluno();
 		}
-		return posicoesIniciaisAlunos;
-	}
-	
-	
-	public static void sortearBugsNoPlano( ) {
+		
+		
 		
 		
 	}
+
+	public void sortearBugsNoPlano() {	
+		
+		for(int i=1; i<=this.qtdAlunos; i++) {
+			int celulaSorteada = sortearNumero(1, this.plano.listaCelulas.size());
+			
+			while(this.plano.listaCelulas.get(celulaSorteada).elemento != null) {
+				celulaSorteada++;
+				System.out.println("Celula Ocupada - Prox posicao para Bug");
+			}
+			
+			this.plano.listaCelulas.get(celulaSorteada).elemento = new Bug();
+		}
+		
+	}
+	
 	
 	
 	

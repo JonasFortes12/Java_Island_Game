@@ -10,18 +10,19 @@ public class Plano {
 		
 		this.tamanhoX = tamanhoX;
 		this.tamanhoY = tamanhoY;
+		montarPlano();
 		
 	}
 
 	
-	public void montarPlano() {
-		listaCelulas = new ArrayList<Celula>();
+	private void montarPlano() {
+		this.listaCelulas = new ArrayList<Celula>();
 
 		int contador = 1;
 		for (int i = 1; i <= tamanhoX; i++) {
 			for (int j = 1; j <= tamanhoY; j++) {
 				Celula celula = new Celula(contador, i, j);
-				listaCelulas.add(celula);
+				this.listaCelulas.add(celula);
 				contador++;
 			}
 		}
@@ -31,7 +32,7 @@ public class Plano {
 	public Celula retornarCelula(int x, int y) {
 
 		for (int i = 0; i < listaCelulas.size(); i++) {
-			if (listaCelulas.get(i).posicaoX == x && listaCelulas.get(i).posicaoY == y) {
+			if (listaCelulas.get(i).posicao.coordenadaX == x && listaCelulas.get(i).posicao.coordenadaY == y) {
 				return listaCelulas.get(i);
 			}
 		}
